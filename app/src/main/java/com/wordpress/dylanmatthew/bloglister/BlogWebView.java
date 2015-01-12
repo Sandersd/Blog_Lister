@@ -11,6 +11,7 @@ import android.webkit.WebView;
 
 public class BlogWebView extends ActionBarActivity {
 
+    //Member Varaible to hold Url
     protected String mUrl;
 
     @Override
@@ -18,12 +19,14 @@ public class BlogWebView extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog_web_view);
 
+        //Get Intent with Url from list
         Intent intent = getIntent();
         Uri blogUri = intent.getData();
 
+        //Set up WebView
         WebView webView = (WebView) findViewById(R.id.webView);
 
-
+        //Load Url in WebView
         mUrl = blogUri.toString();
         webView.loadUrl(mUrl);
     }
